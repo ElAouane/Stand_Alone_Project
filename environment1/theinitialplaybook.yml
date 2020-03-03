@@ -13,7 +13,17 @@
     - name: install pip
       shell: sudo apt-get install python3.6
 
+    - name: install java ppa
+      shell: sudo add-apt-repository ppa:openjdk-r/ppa
 
+    - name: update repo
+      shell: sudo apt-get update
+
+    - name: install java
+      shell: sudo apt-get install openjdk-8-jdk -y
+
+    - name: install jre
+      shell: sudo apt install openjdk-8-jre-headless
     # - name: adding aws AWS_server
     #   add_host:
     #     name: AWS_server

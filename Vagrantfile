@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
       py.vm.synced_folder "environment1", "/home/vagrant/environment"
       py.vm.synced_folder "stuffneeded", "/home/vagrant/stuffneeded"
       py.vm.synced_folder "Downloads", "/home/vagrant/Downloads"
+      py.vm.synced_folder "tests", "/home/vagrant/tests"
+      py.vm.provision "shell", path: "environment1/provision.sh"
 
       py.vm.provision :ansible_local do |ansible|
         ansible.playbook       = "/home/vagrant/environment/theinitialplaybook.yml"
