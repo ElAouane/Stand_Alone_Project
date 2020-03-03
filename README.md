@@ -1,44 +1,48 @@
-# IT Jobs Watch Data
+# Python Environment Project
+## Timings
+555.54 Days
 
-## Introduction
-The aim of this project is to create a simple service that can scrape useful data from ITJobswatch.
 
-## Current Scope
-At present the app is set up to be cloned and used to simply scrape the below services:
+## Summary
 
-1. Home page top 30 job/roles / skills which can be found [here]()
 
-The aim will be to expand this to further services such as:
+We have a created a console JSON application that can gather data from IT Jobs Watch.
 
-* Regular polling of pages and writing to a database for longer terms stats
-* Bespoke calls for specific job role data
 
-And much more.
+Your job is to create working development, testing and production environment and to build a pipeline to move the code through them using Jenkins. This will include your application and configuration code.
 
-## Usage
-_Pre-Requisites_
-* Pycharm IDE
-* Python 3.x + installed
 
-### Installing packages
-The necessary packages needed to run this program should automatically be picked up by pycharm. You may find a a few pop ups within the IDE that state there are dependencies missing, if you simply install these through the IDE you should be set up correctly.  
 
-### Running tests
+Note: We will need to add the group to Repo on GitHub before it is accessible.
 
-To test whether the program will work from your machine:
- 
- * Ensure the `config.ini` file has the test environment set to `live`
- * Click the `Terminal` icon which can be found on the menu in the bottom left of Pycharm.
-* Ensure you're in the root path of the project and type `python -m pytest tests/`
 
-This should execute the tests if any fail you may have issues with this program.
 
-### Running and using the program
-To use the program simply right click on the `main.py` file and then click `Run 'main'`. This will run the command line user interface.
+You can clone the code for the application from the following repo:
 
-Follow the instructions to download via the various options given.
+```
+https://github.com/spartaglobal/It_Jobs_Watch_Data_Package
+```
 
-# Next steps
-* Adding a job details search option (essentially be able to search for a specific role and return the details in a CSV)
-* create a connected database for full deployment
-* Build a scheduler as part of a full deployment to poll and add to the database 
+You should fork this repo to one of your own and then clone between the group.
+
+
+## Tasks
+
+
+## Python App Pipeline
+
+- Create a development environment using Vagrant and provision it with Bash such that it can run the application successfully.
+	Your development environment needs testing too.
+- Create a Jenkins job that listens for Webhooks from your forked repo and starts a testing job on the Python Slave node.
+- Create a Python slave node on the Jenkins instance. For this you will need to create an AMI through AWS, this is an Amazon Machine Image that is provisioned via your Bash script. Check you can run the App before you creating the AMI. (You have not done this yet - Research will be needed on creating an AMI from an EC2 instance and then creating a Python Slave Node via the EC2 plugin on Jenkins).
+	Run the tests in the application on the slave node, this should show a successful build when the tests pass.
+
+
+
+## Deliverables
+
+
+
+1. Forked ItJobsWatch application repo with Vagrantfile ability to simply Vagrant up and run in development
+2. Jenkins Job that runs test suite on pushes to master branch of forked application repo.
+3. Python Slave node created via AMI
