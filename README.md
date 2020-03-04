@@ -46,3 +46,5 @@ You should fork this repo to one of your own and then clone between the group.
 1. Forked ItJobsWatch application repo with Vagrantfile ability to simply Vagrant up and run in development
 2. Jenkins Job that runs test suite on pushes to master branch of forked application repo.
 3. Python Slave node created via AMI
+
+TESTS
